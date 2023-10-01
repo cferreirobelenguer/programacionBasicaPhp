@@ -26,15 +26,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="radio.css">
 </head>
 <body>
-    <h1>Por favor introduce el radio</h1>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <input type="number" name="radio" placeholder="Introduzca radio" required>
-        <input type="submit" value="Enviar">
-    </form>
-    <p><?php echo getData() ?></p>
-    <button onClick='goHome()'>Volver a menú</button>
+    <div class="radio">
+        <h1 class="radio__title" >Por favor introduce el radio</h1>
+        <div class="radio__container">
+            <form class="radio__form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                <input class="radio--input" type="number" name="radio" placeholder="Introduzca radio" required>
+                <input class="radio--button" type="submit" value="Enviar">
+            </form>
+        </div>
+        <p class="radio__subtitle" ><?php echo getData() ?></p>
+        <button class="radio--button" onClick='goHome()'>Volver a menú</button>
+    </div>
     <script>
         function goHome() {
             window.location.href='basic.php'

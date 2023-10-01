@@ -35,17 +35,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="area.css">
 </head>
 <body>
-    <h1>Por favor introduce los lados de un triángulo:</h1>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <input type='number' name="lado_a" placeholder='Introduzca lado a' required>
-        <input type='number' name="lado_b" placeholder='Introduzca lado b' required>
-        <input type='number' name="lado_c" placeholder='Introduzca lado c' required>
-        <input type="submit" value="Enviar">
-    </form>
-    <p><?php echo getArea() ?></p>
-    <button onClick='goHome()'>Volver a menú</button>
+    <div class="area">
+        <h1 class="area__title">Por favor introduce los lados de un triángulo:</h1>
+        <div class="area__container">
+            <form class="area__form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                <input class="area--input" type='number' name="lado_a" placeholder='Introduzca lado a' required>
+                <input class="area--input" type='number' name="lado_b" placeholder='Introduzca lado b' required>
+                <input class="area--input" type='number' name="lado_c" placeholder='Introduzca lado c' required>
+                <input class="area--button" type="submit" value="Enviar">
+            </form>
+        </div>
+        <p class="area__subtitle"><?php echo getArea() ?></p>
+        <button class="area--button" onClick='goHome()'>Volver a menú</button>
+    </div>
+    
     <script>
         function goHome() {
             window.location.href='basic.php'

@@ -25,15 +25,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cálculo de tiempo</title>
+    <link rel="stylesheet" href="time.css">
 </head>
 <body>
-    <h1>Por favor introduce los segundos</h1>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <input type="number" name="segundos" placeholder="Introduce los segundos" required>
-        <input type="submit" value="Enviar">
-    </form>
-    <p><?php echo getTime() ?></p>
-    <button onClick='goHome()'>Volver a menú</button>
+    <div class="time">
+        <h1 class="time__title">Por favor introduce los segundos</h1>
+        <div class="time__container">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                <input class="time--input" type="number" name="segundos" placeholder="Introduce los segundos" required>
+                <input class="time--button" type="submit" value="Enviar">
+            </form>
+        </div>
+        <p class="time__subtitle" ><?php echo getTime() ?></p>
+        <button onClick='goHome()' class="time--button">Volver a menú</button>
+    </div>
+    
     <script>
         function goHome() {
             window.location.href='basic.php'
