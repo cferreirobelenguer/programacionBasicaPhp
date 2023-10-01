@@ -5,22 +5,27 @@
  */
     function getArea() {
         if (isset($_POST["lado_a"]) && isset($_POST["lado_b"]) && isset($_POST["lado_c"])) {
-            // lados triángulo
-            $a = $_POST["lado_a"];
-            $b = $_POST["lado_b"];
-            $c = $_POST["lado_c"];
+            if ( $_POST["lado_a"] < 0 || $_POST["lado_b"] < 0 || $_POST["lado_c"] < 0) {
+                return "No se puede realizar la operación ya que los datos son negativos";
+            } else {
+                // lados triángulo
+                $a = $_POST["lado_a"];
+                $b = $_POST["lado_b"];
+                $c = $_POST["lado_c"];
         
-            // semiperímetro
-            $s = ($a + $b + $c) / 2;
+                // semiperímetro
+                $s = ($a + $b + $c) / 2;
         
-            // area
-            $area = sqrt($s * ($s - $a) * ($s - $b) * ($s - $c));
+                // area
+                $area = sqrt($s * ($s - $a) * ($s - $b) * ($s - $c));
         
-            // longitud
-            $longitud = $a + $b + $c;
+                // longitud
+                $longitud = $a + $b + $c;
         
-            // result
-            return "Área del triángulo: " . $area . "<br>Longitud total de los lados: " . $longitud;
+                // resultado
+                return "Área del triángulo: " . $area . "<br>Longitud total de los lados: " . $longitud;
+            }
+            
         }
     }
 ?>
